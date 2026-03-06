@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlowGenerate - Créez vos factures et CV professionnels</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/landing.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar-modern">
+        <div class="nav-container-modern">
+            <div class="nav-logo-modern">
+                <div class="logo-icon">
+                    <i class="fas fa-file-pdf"></i>
+                </div>
+                <span>FlowGenerate</span>
+            </div>
+            <ul class="nav-menu-modern" id="nav-menu">
+                <li><a href="#home" class="nav-link-modern active">Accueil</a></li>
+                <li><a href="#features" class="nav-link-modern">Fonctionnalités</a></li>
+                <li><a href="#services" class="nav-link-modern">Services</a></li>
+                <li><a href="#pricing" class="nav-link-modern">Tarifs</a></li>
+                <li><a href="#testimonials" class="nav-link-modern">Témoignages</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="login.html" class="btn-login">Connexion</a>
+                <a href="login.html" class="btn-primary-modern">
+                    Essayer gratuitement
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+            <div class="hamburger-modern" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-modern">
+        <div class="hero-background">
+            <div class="blob blob-1"></div>
+            <div class="blob blob-2"></div>
+            <div class="blob blob-3"></div>
+        </div>
+        
+        <div class="hero-container-modern">
+            <div class="hero-content-modern">
+                <div class="hero-badge">
+                    <i class="fas fa-star"></i>
+                    <span>Plus de 10 000+ utilisateurs actifs</span>
+                </div>
+                
+                <h1 class="hero-title-modern">
+                    Créez vos <span class="highlight-gradient">Factures</span> et 
+                    <span class="highlight-gradient">CV</span> en quelques minutes
+                </h1>
+                
+                <p class="hero-description-modern">
+                    La solution tout-en-un pour générer des documents PDF professionnels. 
+                    Simple, rapide et personnalisable selon vos besoins.
+                </p>
+                
+                <div class="hero-cta">
+                    <a href="login.html" class="btn-cta-primary">
+                        Commencer gratuitement
+                        <i class="fas fa-rocket"></i>
+                    </a>
+                    <a href="#demo" class="btn-cta-secondary">
+                        <i class="fas fa-play-circle"></i>
+                        Voir la démo
+                    </a>
+                </div>
+                
+                <div class="trust-indicators">
+                    <div class="trust-item">
+                        <div class="trust-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span>4.9/5 sur Trustpilot</span>
+                    </div>
+                    <div class="user-avatars">
+                        <img src="https://i.pravatar.cc/40?img=1" alt="User">
+                        <img src="https://i.pravatar.cc/40?img=2" alt="User">
+                        <img src="https://i.pravatar.cc/40?img=3" alt="User">
+                        <img src="https://i.pravatar.cc/40?img=4" alt="User">
+                        <span class="avatar-plus">+5K</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero-visual">
+                <div class="mockup-container">
+                    <div class="floating-card card-invoice">
+                        <div class="card-header-mini">
+                            <i class="fas fa-file-invoice"></i>
+                            <span>Facture #2024-001</span>
+                        </div>
+                        <div class="card-content-mini">
+                            <div class="mini-line"></div>
+                            <div class="mini-line short"></div>
+                            <div class="mini-stats">
+                                <div class="stat-mini">
+                                    <span class="label">Total HT</span>
+                                    <span class="value">1,250€</span>
+                                </div>
+                                <div class="stat-mini">
+                                    <span class="label">TVA</span>
+                                    <span class="value">250€</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="floating-card card-cv">
+                        <div class="card-header-mini">
+                            <i class="fas fa-file-alt"></i>
+                            <span>CV Optimisé ATS</span>
+                        </div>
+                        <div class="card-content-mini">
+                            <div class="cv-profile">
+                                <div class="cv-avatar"></div>
+                                <div class="cv-info">
+                                    <div class="mini-line"></div>
+                                    <div class="mini-line short"></div>
+                                </div>
+                            </div>
+                            <div class="cv-sections">
+                                <div class="cv-section-item">
+                                    <i class="fas fa-briefcase"></i>
+                                    <div class="mini-line"></div>
+                                </div>
+                                <div class="cv-section-item">
+                                    <i class="fas fa-graduation-cap"></i>
+                                    <div class="mini-line"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="floating-card card-excel">
+                        <div class="card-header-mini">
+                            <i class="fas fa-file-excel"></i>
+                            <span>Import Excel</span>
+                        </div>
+                        <div class="card-content-mini">
+                            <div class="excel-progress">
+                                <div class="progress-bar">
+                                    <div class="progress-fill"></div>
+                                </div>
+                                <span class="progress-text">125 factures générées</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="phone-mockup">
+                        <div class="phone-screen">
+                            <div class="phone-header">
+                                <span>FlowGenerate</span>
+                            </div>
+                            <div class="phone-content">
+                                <div class="phone-card">
+                                    <i class="fas fa-file-invoice"></i>
+                                    <span>Créer une facture</span>
+                                </div>
+                                <div class="phone-card">
+                                    <i class="fas fa-file-alt"></i>
+                                    <span>Générer un CV</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-modern">
+        <div class="container-modern">
+            <div class="stats-grid-modern">
+                <div class="stat-card-modern">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>10K+</h3>
+                    <p>Utilisateurs actifs</p>
+                </div>
+                <div class="stat-card-modern">
+                    <div class="stat-icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <h3>50K+</h3>
+                    <p>Documents créés</p>
+                </div>
+                <div class="stat-card-modern">
+                    <div class="stat-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>< 30s</h3>
+                    <p>Temps de génération</p>
+                </div>
+                <div class="stat-card-modern">
+                    <div class="stat-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>4.9/5</h3>
+                    <p>Satisfaction client</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features-modern">
+        <div class="container-modern">
+            <div class="section-header-modern">
+                <span class="section-badge">Fonctionnalités</span>
+                <h2>Tout ce dont vous avez besoin</h2>
+                <p>Des outils puissants pour créer des documents professionnels en un clin d'œil</p>
+            </div>
+            
+            <div class="features-grid-modern">
+                <div class="feature-card-modern">
+                    <div class="feature-icon-modern">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>100% Personnalisable</h3>
+                    <p>Adaptez couleurs, polices et logos à votre image de marque</p>
+                </div>
+                
+                <div class="feature-card-modern">
+                    <div class="feature-icon-modern">
+                        <i class="fas fa-file-excel"></i>
+                    </div>
+                    <h3>Import Excel</h3>
+                    <p>Générez des factures en masse depuis vos fichiers Excel</p>
+                </div>
+                
+                <div class="feature-card-modern">
+                    <div class="feature-icon-modern">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>Optimisé ATS</h3>
+                    <p>CV reconnus par les systèmes de tracking des recruteurs</p>
+                </div>
+                
+                <div class="feature-card-modern">
+                    <div class="feature-icon-modern">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Génération rapide</h3>
+                    <p>Créez vos documents en moins de 30 secondes</p>
+                </div>
+                
+                <div class="feature-card-modern">
+                    <div class="feature-icon-modern">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>100% Sécurisé</h3>
+                    <p>Vos données sont cryptées et ne sont jamais partagées</p>
+                </div>
+                
+                <div class="feature-card-modern">
+                    <div class="feature-icon-modern">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Multi-plateforme</h3>
+                    <p>Accessible sur ordinateur, tablette et smartphone</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services-modern">
+        <div class="container-modern">
+            <div class="section-header-modern">
+                <span class="section-badge">Services</span>
+                <h2>Nos solutions pour vous</h2>
+                <p>Choisissez le service adapté à vos besoins</p>
+            </div>
+            
+            <div class="services-grid-modern">
+                <div class="service-card-modern">
+                    <div class="service-icon-modern">
+                        <i class="fas fa-file-invoice-dollar"></i>
+                    </div>
+                    <h3>Générateur de Factures</h3>
+                    <p>Créez des factures professionnelles personnalisées en quelques clics</p>
+                    <ul class="service-list">
+                        <li><i class="fas fa-check"></i> Personnalisation complète</li>
+                        <li><i class="fas fa-check"></i> Calcul automatique</li>
+                        <li><i class="fas fa-check"></i> Logo et signature</li>
+                        <li><i class="fas fa-check"></i> Multi-devises</li>
+                    </ul>
+                    <a href="login.html" class="btn-service-modern">
+                        Essayer maintenant
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <div class="service-card-modern featured-service">
+                    <div class="popular-badge">
+                        <i class="fas fa-crown"></i> Populaire
+                    </div>
+                    <div class="service-icon-modern">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3>Générateur de CV</h3>
+                    <p>CV optimisés ATS pour maximiser vos chances auprès des recruteurs</p>
+                    <ul class="service-list">
+                        <li><i class="fas fa-check"></i> Format ATS friendly</li>
+                        <li><i class="fas fa-check"></i> Projets détaillés</li>
+                        <li><i class="fas fa-check"></i> Plusieurs templates</li>
+                        <li><i class="fas fa-check"></i> Export PDF professionnel</li>
+                    </ul>
+                    <a href="login.html" class="btn-service-modern">
+                        Essayer maintenant
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <div class="service-card-modern">
+                    <div class="service-icon-modern">
+                        <i class="fas fa-file-excel"></i>
+                    </div>
+                    <h3>Import Excel</h3>
+                    <p>Générez des factures en masse depuis vos fichiers Excel</p>
+                    <ul class="service-list">
+                        <li><i class="fas fa-check"></i> Import rapide</li>
+                        <li><i class="fas fa-check"></i> Validation automatique</li>
+                        <li><i class="fas fa-check"></i> Export groupé</li>
+                        <li><i class="fas fa-check"></i> Template gratuit</li>
+                    </ul>
+                    <a href="login.html" class="btn-service-modern">
+                        Bientôt disponible
+                        <i class="fas fa-clock"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials-modern">
+        <div class="container-modern">
+            <div class="section-header-modern">
+                <span class="section-badge">Témoignages</span>
+                <h2>Ce que disent nos utilisateurs</h2>
+                <p>Rejoignez des milliers d'utilisateurs satisfaits</p>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"Une expérience exceptionnelle ! Les factures sont professionnelles et le gain de temps est énorme."</p>
+                    <div class="testimonial-author">
+                        <img src="https://i.pravatar.cc/60?img=12" alt="Marie Dubois">
+                        <div>
+                            <h4>Marie Dubois</h4>
+                            <span>Freelance Designer</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"Mon CV généré ici m'a permis de décrocher 3 entretiens en une semaine. Format parfait pour les ATS !"</p>
+                    <div class="testimonial-author">
+                        <img src="https://i.pravatar.cc/60?img=33" alt="Thomas Martin">
+                        <div>
+                            <h4>Thomas Martin</h4>
+                            <span>Développeur Web</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"Interface intuitive et résultat professionnel. Je recommande à tous les entrepreneurs !"</p>
+                    <div class="testimonial-author">
+                        <img src="https://i.pravatar.cc/60?img=47" alt="Sophie Laurent">
+                        <div>
+                            <h4>Sophie Laurent</h4>
+                            <span>Consultante Marketing</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-modern">
+        <div class="container-modern">
+            <div class="cta-content">
+                <h2>Prêt à créer vos documents professionnels ?</h2>
+                <p>Rejoignez plus de 10 000 utilisateurs satisfaits et commencez gratuitement dès aujourd'hui</p>
+                <a href="login.html" class="btn-cta-large">
+                    Commencer gratuitement
+                    <i class="fas fa-rocket"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-modern">
+        <div class="container-modern">
+            <div class="footer-content-modern">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <div class="logo-icon">
+                            <i class="fas fa-file-pdf"></i>
+                        </div>
+                        <span>FlowGenerate</span>
+                    </div>
+                    <p>La solution tout-en-un pour créer des documents PDF professionnels</p>
+                    <div class="social-links-modern">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links-modern">
+                    <div class="footer-column">
+                        <h4>Produit</h4>
+                        <a href="#features">Fonctionnalités</a>
+                        <a href="#services">Services</a>
+                        <a href="#pricing">Tarifs</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Ressources</h4>
+                        <a href="#">Documentation</a>
+                        <a href="#">Tutoriels</a>
+                        <a href="#">Blog</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Entreprise</h4>
+                        <a href="#">À propos</a>
+                        <a href="#">Contact</a>
+                        <a href="#">Carrières</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Légal</h4>
+                        <a href="#">CGU</a>
+                        <a href="#">Confidentialité</a>
+                        <a href="#">Mentions légales</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom-modern">
+                <p>&copy; 2024 PDF Generator Pro. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - PDF Generator Pro</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <i class="fas fa-file-pdf"></i>
+                <span>PDF Generator Pro</span>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="dashboard.html" class="nav-item active">
+                    <i class="fas fa-home"></i>
+                    <span>Accueil</span>
+                </a>
+                <a href="invoice/index.html" class="nav-item">
+                    <i class="fas fa-file-invoice"></i>
+                    <span>Factures</span>
+                </a>
+                <a href="cv/index.html" class="nav-item">
+                    <i class="fas fa-file-alt"></i>
+                    <span>CV</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-history"></i>
+                    <span>Historique</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-cog"></i>
+                    <span>Paramètres</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <button class="btn-logout" onclick="logout()">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Déconnexion</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="dashboard-header">
+                <div>
+                    <h1>Bienvenue, <span id="user-name">Utilisateur</span> ! 👋</h1>
+                    <p>Que souhaitez-vous créer aujourd'hui ?</p>
+                </div>
+            </header>
+
+            <div class="dashboard-grid">
+                <div class="dashboard-card card-invoice" onclick="window.location.href='invoice/index.html'">
+                    <div class="card-icon">
+                        <i class="fas fa-file-invoice"></i>
+                    </div>
+                    <h3>Créer une facture</h3>
+                    <p>Générez des factures professionnelles personnalisées</p>
+                    <div class="card-footer">
+                        <span class="card-link">Commencer <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </div>
+
+                <div class="dashboard-card card-cv" onclick="window.location.href='cv/index.html'">
+                    <div class="card-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3>Créer un CV</h3>
+                    <p>CV optimisé ATS pour maximiser vos chances</p>
+                    <div class="card-footer">
+                        <span class="card-link">Commencer <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </div>
+
+                <div class="dashboard-card card-excel">
+                    <div class="card-icon">
+                        <i class="fas fa-file-excel"></i>
+                    </div>
+                    <h3>Import Excel</h3>
+                    <p>Générez des factures en masse depuis Excel</p>
+                    <div class="card-footer">
+                        <span class="card-link">Bientôt disponible <i class="fas fa-clock"></i></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stats-section">
+                <h2>Vos statistiques</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <i class="fas fa-file-invoice"></i>
+                        <h3>0</h3>
+                        <p>Factures créées</p>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-file-alt"></i>
+                        <h3>0</h3>
+                        <p>CV générés</p>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-download"></i>
+                        <h3>0</h3>
+                        <p>Documents téléchargés</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="assets/js/dashboard.js"></script>
+</body>
+
+</html>
