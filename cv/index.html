@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Générateur de CV - PDF Generator Pro</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <i class="fas fa-file-pdf"></i>
+            <span>PDF Generator Pro</span>
+        </div>
+        
+        <nav class="sidebar-nav">
+            <a href="/dashboard.html" class="nav-item">
+                <i class="fas fa-home"></i>
+                <span>Accueil</span>
+            </a>
+            <a href="../facture/index.html" class="nav-item">
+                <i class="fas fa-file-invoice"></i>
+                <span>Factures</span>
+            </a>
+            <a href="index.html" class="nav-item active">
+                <i class="fas fa-file-alt"></i>
+                <span>CV</span>
+            </a>
+        </nav>
+        
+        <div class="sidebar-footer">
+            <button class="btn-logout" onclick="logout()">
+                <i class="fas fa-sign-out-alt"></i>
+                <span>Déconnexion</span>
+            </button>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="page-header">
+            <div>
+                <h1><i class="fas fa-file-alt"></i> Générateur de CV</h1>
+                <p>Créez un CV professionnel optimisé ATS</p>
+            </div>
+            <button class="btn btn-primary" onclick="generateCVPDF()">
+                <i class="fas fa-download"></i>
+                Télécharger PDF
+            </button>
+        </div>
+
+        <div class="cv-container">
+            <!-- Form Section -->
+            <div class="cv-form-section">
+                <div class="card">
+                    <!-- Style Selection -->
+                    <div class="form-section">
+                        <h3><i class="fas fa-palette"></i> Style du CV</h3>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label">Couleur principale</label>
+                                <input type="color" id="cv-color" value="#667eea" class="color-picker">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Police</label>
+                                <select id="cv-font" class="form-select">
+                                    <option value="Helvetica">Helvetica (Recommandé ATS)</option>
+                                    <option value="Arial">Arial</option>
+                                    <option value="Times">Times New Roman</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Personal Information -->
+                    <div class="form-section">
+                        <h3><i class="fas fa-user"></i> Informations personnelles</h3>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Nom complet *</label>
+                            <input type="text" id="cv-name" class="form-input" placeholder="Jean Dupont" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Titre professionnel *</label>
+                            <input type="text" id="cv-title" class="form-input" placeholder="Développeur Full Stack" required>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label">Email *</label>
+                                <input type="email" id="cv-email" class="form-input" placeholder="jean.dupont@email.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Téléphone *</label>
+                                <input type="tel" id="cv-phone" class="form-input" placeholder="+33 6 12 34 56 78" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label">Ville</label>
+                                <input type="text" id="cv-city" class="form-input" placeholder="Paris, France">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">LinkedIn</label>
+                                <input type="text" id="cv-linkedin" class="form-input" placeholder="linkedin.com/in/jeandupont">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Site web / Portfolio</label>
+                            <input type="text" id="cv-website" class="form-input" placeholder="www.jeandupont.com">
+                        </div>
+                    </div>
+
+                    <!-- Summary -->
+                    <div class="form-section">
+                        <h3><i class="fas fa-align-left"></i> Résumé professionnel</h3>
+                        <div class="form-group">
+                            <textarea id="cv-summary" class="form-textarea" rows="4" placeholder="Développeur Full Stack avec 5 ans d'expérience..."></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Experience -->
+                    <div class="form-section">
+                        <h3><i class="fas fa-briefcase"></i> Expérience professionnelle</h3>
+                        <div id="experiences-container"></div>
+                        <button type="button" class="btn btn-secondary btn-sm" onclick="addExperience()">
+                            <i class="fas fa-plus"></i> Ajouter une expérience
+                        </button>
+                    </div>
+
+                    <!-- Education -->
+                    <div class="form-section">
+                        <h3><i class="fas fa-graduation-cap"></i> Formation</h3>
+                        <div id="education-container"></div>
+                        <button type="button" class="btn btn-secondary btn-sm" onclick="addEducation()">
+                            <i class="fas fa-plus"></i> Ajouter une formation
+                        </button>
+                    </div>
+
+                    <!-- Projects -->
+                    <div class="form-section">
+                        <h3><i class="fas fa-project-diagram"></i> Projets clés</h3>
+                        <div id="projects-container"></div>
+                        <button type="button" class="btn btn-secondary btn-sm" onclick="addProject()">
+                            <i class="fas fa-plus"></i> Ajouter un projet
+                        </button>
+                    </div>
+
+                    <!-- Skills -->
+                    <div class="form-section">
+                        <h3><i class="fas fa-code"></i> Compétences techniques</h3>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Langages de programmation</label>
+                            <input type="text" id="cv-skills-languages" class="form-input" placeholder="JavaScript, Python, Java">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Frameworks & Bibliothèques</label>
+                            <input type="text" id="cv-skills-frameworks" class="form-input" placeholder="React, Node.js, Django">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Outils & Technologies</label>
+                            <input type="text" id="cv-skills-tools" class="form-input" placeholder="Git, Docker, AWS">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Méthodologies</label>
+                            <input type="text" id="cv-skills-methods" class="form-input" placeholder="Agile, Scrum, TDD">
+                        </div>
+                    </div>
+
+                    <!-- Languages -->
+                    <div class="form-section">
+                        <h3><i class="fas fa-language"></i> Langues</h3>
+                        <div class="form-group">
+                            <textarea id="cv-languages" class="form-textarea" rows="2" placeholder="Français (Natif), Anglais (C1), Espagnol (B2)"></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Certifications -->
+                    <div class="form-section">
+                        <h3><i class="fas fa-certificate"></i> Certifications (optionnel)</h3>
+                        <div class="form-group">
+                            <textarea id="cv-certifications" class="form-textarea" rows="2" placeholder="AWS Certified Developer, ITIL Foundation"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Preview Section -->
+            <div class="cv-preview-section">
+                <div class="preview-sticky">
+                    <div class="preview-header">
+                        <h3><i class="fas fa-eye"></i> Aperçu</h3>
+                    </div>
+                    <div class="cv-preview" id="cv-preview">
+                        <div class="cv-preview-content">
+                            <!-- Header -->
+                            <div class="cv-header">
+                                <h1 id="preview-name">VOTRE NOM</h1>
+                                <h2 id="preview-title">Titre professionnel</h2>
+                                <div class="cv-contact">
+                                    <span id="preview-email">email@example.com</span>
+                                    <span id="preview-phone">+33 6 12 34 56 78</span>
+                                    <span id="preview-city">Ville</span>
+                                </div>
+                                <div class="cv-links">
+                                    <span id="preview-linkedin"></span>
+                                    <span id="preview-website"></span>
+                                </div>
+                            </div>
+
+                            <!-- Summary -->
+                            <div class="cv-section" id="summary-section" style="display: none;">
+                                <h3 class="cv-section-title">RÉSUMÉ PROFESSIONNEL</h3>
+                                <p id="preview-summary"></p>
+                            </div>
+
+                            <!-- Experience -->
+                            <div class="cv-section" id="experience-section">
+                                <h3 class="cv-section-title">EXPÉRIENCE PROFESSIONNELLE</h3>
+                                <div id="preview-experiences"></div>
+                            </div>
+
+                            <!-- Education -->
+                            <div class="cv-section" id="education-section">
+                                <h3 class="cv-section-title">FORMATION</h3>
+                                <div id="preview-education"></div>
+                            </div>
+
+                            <!-- Projects -->
+                            <div class="cv-section" id="projects-section" style="display: none;">
+                                <h3 class="cv-section-title">PROJETS CLÉS</h3>
+                                <div id="preview-projects"></div>
+                            </div>
+
+                            <!-- Skills -->
+                            <div class="cv-section" id="skills-section" style="display: none;">
+                                <h3 class="cv-section-title">COMPÉTENCES TECHNIQUES</h3>
+                                <div id="preview-skills"></div>
+                            </div>
+
+                            <!-- Languages -->
+                            <div class="cv-section" id="languages-section" style="display: none;">
+                                <h3 class="cv-section-title">LANGUES</h3>
+                                <p id="preview-languages"></p>
+                            </div>
+
+                            <!-- Certifications -->
+                            <div class="cv-section" id="certifications-section" style="display: none;">
+                                <h3 class="cv-section-title">CERTIFICATIONS</h3>
+                                <p id="preview-certifications"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Fonction logout
+        function logout() {
+            if (confirm('Êtes-vous sûr de vouloir vous déconnecter ?')) {
+                localStorage.removeItem('currentUser');
+                window.location.href = '../index.html';
+            }
+        }
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
