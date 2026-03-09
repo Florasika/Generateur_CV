@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,7 +14,7 @@
             grid-template-columns: 1fr 1fr;
             background: var(--bg-primary);
         }
-
+        
         /* Left Side - Branding */
         .login-left {
             background: var(--gradient-primary);
@@ -26,7 +25,7 @@
             position: relative;
             overflow: hidden;
         }
-
+        
         .login-left::before {
             content: '';
             position: absolute;
@@ -37,7 +36,7 @@
             top: -200px;
             right: -200px;
         }
-
+        
         .login-left::after {
             content: '';
             position: absolute;
@@ -48,14 +47,14 @@
             bottom: -150px;
             left: -150px;
         }
-
+        
         .login-branding {
             position: relative;
             z-index: 1;
             text-align: center;
             max-width: 500px;
         }
-
+        
         .login-logo {
             width: 80px;
             height: 80px;
@@ -69,27 +68,27 @@
             color: white;
             font-size: 2.5rem;
         }
-
+        
         .login-branding h1 {
             color: white;
             font-size: 2.5rem;
             margin-bottom: 1rem;
         }
-
+        
         .login-branding p {
             color: rgba(255, 255, 255, 0.9);
             font-size: 1.25rem;
             margin-bottom: 3rem;
             line-height: 1.8;
         }
-
+        
         .login-features {
             display: flex;
             flex-direction: column;
             gap: 1.5rem;
             text-align: left;
         }
-
+        
         .login-feature {
             display: flex;
             align-items: center;
@@ -100,12 +99,12 @@
             border-radius: 12px;
             transition: all 0.3s ease;
         }
-
+        
         .login-feature:hover {
             background: rgba(255, 255, 255, 0.15);
             transform: translateX(10px);
         }
-
+        
         .login-feature-icon {
             width: 50px;
             height: 50px;
@@ -118,19 +117,19 @@
             font-size: 1.5rem;
             flex-shrink: 0;
         }
-
+        
         .login-feature-content h4 {
             color: white;
             margin-bottom: 0.25rem;
             font-size: 1.1rem;
         }
-
+        
         .login-feature-content p {
             color: rgba(255, 255, 255, 0.8);
             font-size: 0.9rem;
             margin: 0;
         }
-
+        
         /* Right Side - Form */
         .login-right {
             display: flex;
@@ -139,13 +138,24 @@
             padding: 3rem;
             background: white;
         }
-
+        
         .login-form-container {
             width: 100%;
             max-width: 450px;
             animation: fadeInUp 0.6s ease-out;
         }
-
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
         .back-link {
             display: inline-flex;
             align-items: center;
@@ -155,27 +165,27 @@
             margin-bottom: 2rem;
             transition: all 0.3s ease;
         }
-
+        
         .back-link:hover {
             color: var(--primary);
             transform: translateX(-5px);
         }
-
+        
         .login-header {
             margin-bottom: 2.5rem;
         }
-
+        
         .login-header h2 {
             font-size: 2rem;
             color: var(--text-primary);
             margin-bottom: 0.5rem;
         }
-
+        
         .login-header p {
             color: var(--text-secondary);
             font-size: 1rem;
         }
-
+        
         .login-tabs {
             display: flex;
             gap: 0.5rem;
@@ -184,7 +194,7 @@
             padding: 0.5rem;
             border-radius: 12px;
         }
-
+        
         .login-tab {
             flex: 1;
             padding: 0.875rem 1rem;
@@ -197,26 +207,26 @@
             cursor: pointer;
             transition: all 0.3s ease;
         }
-
+        
         .login-tab.active {
             background: white;
             color: var(--primary);
             box-shadow: var(--shadow-sm);
         }
-
+        
         .login-form {
             display: none;
         }
-
+        
         .login-form.active {
             display: block;
             animation: fadeInUp 0.4s ease-out;
         }
-
+        
         .input-group {
             position: relative;
         }
-
+        
         .input-icon {
             position: absolute;
             left: 1rem;
@@ -225,11 +235,11 @@
             color: var(--text-light);
             font-size: 1.1rem;
         }
-
+        
         .input-with-icon {
             padding-left: 3rem;
         }
-
+        
         .password-toggle {
             position: absolute;
             right: 1rem;
@@ -240,94 +250,30 @@
             color: var(--text-light);
             cursor: pointer;
             font-size: 1.1rem;
+            transition: color 0.3s ease;
         }
-
+        
+        .password-toggle:hover {
+            color: var(--primary);
+        }
+        
         .forgot-password {
             text-align: right;
             margin-top: -0.5rem;
             margin-bottom: 1.5rem;
         }
-
+        
         .forgot-password a {
             color: var(--primary);
             font-size: 0.9rem;
             font-weight: 500;
+            transition: all 0.3s ease;
         }
-
+        
         .forgot-password a:hover {
             text-decoration: underline;
         }
-
-        .divider {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin: 2rem 0;
-            color: var(--text-light);
-            font-size: 0.875rem;
-        }
-
-        .divider::before,
-        .divider::after {
-            content: '';
-            flex: 1;
-            height: 1px;
-            background: var(--border-color);
-        }
-
-        .social-login {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .social-btn {
-            flex: 1;
-            padding: 0.875rem;
-            border: 2px solid var(--border-color);
-            border-radius: 10px;
-            background: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.75rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .social-btn:hover {
-            border-color: var(--primary);
-            background: var(--bg-secondary);
-        }
-
-        .social-btn img {
-            width: 20px;
-            height: 20px;
-        }
-
-        .login-footer {
-            text-align: center;
-            margin-top: 2rem;
-            padding-top: 2rem;
-            border-top: 1px solid var(--border-light);
-        }
-
-        .login-footer p {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-        }
-
-        .login-footer a {
-            color: var(--primary);
-            font-weight: 600;
-            margin-left: 0.25rem;
-        }
-
-        .login-footer a:hover {
-            text-decoration: underline;
-        }
-
-        /* Trust indicators */
+        
         .trust-badges {
             display: flex;
             align-items: center;
@@ -337,7 +283,7 @@
             padding-top: 2rem;
             border-top: 1px solid var(--border-light);
         }
-
+        
         .trust-badge {
             display: flex;
             align-items: center;
@@ -345,18 +291,18 @@
             color: var(--text-light);
             font-size: 0.875rem;
         }
-
+        
         .trust-badge i {
             color: var(--accent);
             font-size: 1.1rem;
         }
-
+        
         /* Loading state */
         .btn-loading {
             position: relative;
-            color: transparent;
+            color: transparent !important;
         }
-
+        
         .btn-loading::after {
             content: '';
             position: absolute;
@@ -371,34 +317,86 @@
             border-radius: 50%;
             animation: spin 0.6s linear infinite;
         }
-
+        
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        /* Password strength */
+        .password-strength-indicator {
+            margin-top: 0.5rem;
+            display: none;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .password-strength-indicator.show {
+            display: flex;
+        }
+        
+        .strength-bar {
+            flex: 1;
+            height: 4px;
+            background: var(--border-color);
+            border-radius: 2px;
+            overflow: hidden;
+        }
+        
+        .strength-fill {
+            height: 100%;
+            width: 0;
+            transition: all 0.3s ease;
+            border-radius: 2px;
+        }
+        
+        .strength-fill.weak {
+            width: 33%;
+            background: #ef4444;
+        }
+        
+        .strength-fill.medium {
+            width: 66%;
+            background: #fbbf24;
+        }
+        
+        .strength-fill.strong {
+            width: 100%;
+            background: #22c55e;
+        }
+        
+        .strength-text {
+            font-size: 0.75rem;
+            font-weight: 600;
+            min-width: 60px;
+        }
+        
+        .strength-text.weak { color: #ef4444; }
+        .strength-text.medium { color: #fbbf24; }
+        .strength-text.strong { color: #22c55e; }
+        
         /* Responsive */
         @media (max-width: 1024px) {
             .login-page {
                 grid-template-columns: 1fr;
             }
-
+            
             .login-left {
                 display: none;
             }
         }
-
+        
         @media (max-width: 480px) {
             .login-right {
                 padding: 2rem 1.5rem;
             }
-
+            
             .login-header h2 {
                 font-size: 1.75rem;
-            }
-
-            .social-login {
-                flex-direction: column;
             }
         }
     </style>
 </head>
-
 <body>
     <div class="login-page">
         <!-- Left Side - Branding -->
@@ -409,7 +407,7 @@
                 </div>
                 <h1>PDF Generator Pro</h1>
                 <p>Créez des factures et CV professionnels en quelques minutes</p>
-
+                
                 <div class="login-features">
                     <div class="login-feature">
                         <div class="login-feature-icon">
@@ -420,7 +418,7 @@
                             <p>Générez vos documents en moins de 30 secondes</p>
                         </div>
                     </div>
-
+                    
                     <div class="login-feature">
                         <div class="login-feature-icon">
                             <i class="fas fa-palette"></i>
@@ -430,20 +428,20 @@
                             <p>Couleurs, polices et logos à votre image</p>
                         </div>
                     </div>
-
+                    
                     <div class="login-feature">
                         <div class="login-feature-icon">
                             <i class="fas fa-shield-alt"></i>
                         </div>
                         <div class="login-feature-content">
                             <h4>Sécurisé</h4>
-                            <p>Vos données sont cryptées et protégées</p>
+                            <p>Vos données restent privées et locales</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
+        
         <!-- Right Side - Form -->
         <div class="login-right">
             <div class="login-form-container">
@@ -451,12 +449,12 @@
                     <i class="fas fa-arrow-left"></i>
                     Retour à l'accueil
                 </a>
-
+                
                 <div class="login-header">
                     <h2>Bienvenue ! 👋</h2>
                     <p>Connectez-vous pour accéder à votre espace</p>
                 </div>
-
+                
                 <div class="login-tabs">
                     <button class="login-tab active" onclick="switchLoginTab('login')">
                         Connexion
@@ -465,145 +463,151 @@
                         Inscription
                     </button>
                 </div>
-
+                
                 <!-- Login Form -->
                 <form id="login-form" class="login-form active">
                     <div class="form-group">
                         <label class="form-label">Email</label>
                         <div class="input-group">
                             <i class="input-icon fas fa-envelope"></i>
-                            <input type="email" class="form-input input-with-icon" placeholder="votre@email.com"
-                                required>
+                            <input type="email" 
+                                   class="form-input input-with-icon" 
+                                   placeholder="votre@email.com" 
+                                   required
+                                   autocomplete="email">
                         </div>
                     </div>
-
+                    
                     <div class="form-group">
                         <label class="form-label">Mot de passe</label>
                         <div class="input-group">
                             <i class="input-icon fas fa-lock"></i>
-                            <input type="password" id="login-password" class="form-input input-with-icon"
-                                placeholder="••••••••" required>
+                            <input type="password" 
+                                   id="login-password"
+                                   class="form-input input-with-icon" 
+                                   placeholder="••••••••" 
+                                   required
+                                   autocomplete="current-password">
                             <button type="button" class="password-toggle" onclick="togglePassword('login-password')">
                                 <i class="fas fa-eye"></i>
                             </button>
                         </div>
                     </div>
-
+                    
                     <div class="forgot-password">
                         <a href="#forgot">Mot de passe oublié ?</a>
                     </div>
-
+                    
                     <button type="submit" class="btn btn-primary btn-block btn-lg">
                         <i class="fas fa-sign-in-alt"></i>
                         Se connecter
                     </button>
-
-                    <div class="divider">ou continuez avec</div>
-
-                    <div class="social-login">
-                        <button type="button" class="social-btn" onclick="loginWithGoogle()">
-                            <i class="fab fa-google"></i>
-                            Google
-                        </button>
-                        <button type="button" class="social-btn" onclick="loginWithFacebook()">
-                            <i class="fab fa-facebook"></i>
-                            Facebook
-                        </button>
-                    </div>
                 </form>
-
+                
                 <!-- Register Form -->
                 <form id="register-form" class="login-form">
                     <div class="form-group">
                         <label class="form-label">Nom complet</label>
                         <div class="input-group">
                             <i class="input-icon fas fa-user"></i>
-                            <input type="text" class="form-input input-with-icon" placeholder="Jean Dupont" required>
+                            <input type="text" 
+                                   class="form-input input-with-icon" 
+                                   placeholder="Jean Dupont" 
+                                   required
+                                   autocomplete="name">
                         </div>
                     </div>
-
+                    
                     <div class="form-group">
                         <label class="form-label">Email</label>
                         <div class="input-group">
                             <i class="input-icon fas fa-envelope"></i>
-                            <input type="email" class="form-input input-with-icon" placeholder="votre@email.com"
-                                required>
+                            <input type="email" 
+                                   class="form-input input-with-icon" 
+                                   placeholder="votre@email.com" 
+                                   required
+                                   autocomplete="email">
                         </div>
                     </div>
-
+                    
                     <div class="form-group">
                         <label class="form-label">Mot de passe</label>
                         <div class="input-group">
                             <i class="input-icon fas fa-lock"></i>
-                            <input type="password" id="register-password" class="form-input input-with-icon"
-                                placeholder="••••••••" required>
+                            <input type="password" 
+                                   id="register-password"
+                                   class="form-input input-with-icon" 
+                                   placeholder="••••••••" 
+                                   required
+                                   autocomplete="new-password">
                             <button type="button" class="password-toggle" onclick="togglePassword('register-password')">
                                 <i class="fas fa-eye"></i>
                             </button>
                         </div>
+                        <div class="password-strength-indicator" id="password-strength">
+                            <div class="strength-bar">
+                                <div class="strength-fill"></div>
+                            </div>
+                            <span class="strength-text"></span>
+                        </div>
                     </div>
-
+                    
                     <div class="form-group">
                         <label class="form-label">Confirmer le mot de passe</label>
                         <div class="input-group">
                             <i class="input-icon fas fa-lock"></i>
-                            <input type="password" id="confirm-password" class="form-input input-with-icon"
-                                placeholder="••••••••" required>
+                            <input type="password" 
+                                   id="confirm-password"
+                                   class="form-input input-with-icon" 
+                                   placeholder="••••••••" 
+                                   required
+                                   autocomplete="new-password">
                             <button type="button" class="password-toggle" onclick="togglePassword('confirm-password')">
                                 <i class="fas fa-eye"></i>
                             </button>
                         </div>
                     </div>
-
+                    
                     <button type="submit" class="btn btn-primary btn-block btn-lg">
                         <i class="fas fa-user-plus"></i>
                         Créer mon compte
                     </button>
-
-                    <div class="divider">ou continuez avec</div>
-
-                    <div class="social-login">
-                        <button type="button" class="social-btn" onclick="loginWithGoogle()">
-                            <i class="fab fa-google"></i>
-                            Google
-                        </button>
-                        <button type="button" class="social-btn" onclick="loginWithFacebook()">
-                            <i class="fab fa-facebook"></i>
-                            Facebook
-                        </button>
-                    </div>
                 </form>
-
+                
                 <div class="trust-badges">
                     <div class="trust-badge">
                         <i class="fas fa-shield-alt"></i>
                         <span>100% Sécurisé</span>
                     </div>
                     <div class="trust-badge">
+                        <i class="fas fa-database"></i>
+                        <span>Données locales</span>
+                    </div>
+                    <div class="trust-badge">
                         <i class="fas fa-lock"></i>
-                        <span>Données cryptées</span>
+                        <span>Privé</span>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
+    
     <script src="assets/js/auth.js"></script>
     <script>
         function switchLoginTab(tab) {
             // Update tabs
             document.querySelectorAll('.login-tab').forEach(t => t.classList.remove('active'));
             event.target.classList.add('active');
-
+            
             // Update forms
             document.querySelectorAll('.login-form').forEach(f => f.classList.remove('active'));
             document.getElementById(`${tab}-form`).classList.add('active');
         }
-
+        
         function togglePassword(id) {
             const input = document.getElementById(id);
             const icon = event.currentTarget.querySelector('i');
-
+            
             if (input.type === 'password') {
                 input.type = 'text';
                 icon.classList.remove('fa-eye');
@@ -614,7 +618,49 @@
                 icon.classList.add('fa-eye');
             }
         }
+        
+        // Password strength indicator
+        const registerPassword = document.getElementById('register-password');
+        const strengthIndicator = document.getElementById('password-strength');
+        
+        if (registerPassword) {
+            registerPassword.addEventListener('input', function() {
+                const password = this.value;
+                
+                if (password.length > 0) {
+                    strengthIndicator.classList.add('show');
+                    
+                    let strength = 0;
+                    if (password.length >= 6) strength++;
+                    if (password.length >= 10) strength++;
+                    if (/[a-z]/.test(password) && /[A-Z]/.test(password)) strength++;
+                    if (/\d/.test(password)) strength++;
+                    if (/[^a-zA-Z\d]/.test(password)) strength++;
+                    
+                    const fill = strengthIndicator.querySelector('.strength-fill');
+                    const text = strengthIndicator.querySelector('.strength-text');
+                    
+                    fill.className = 'strength-fill';
+                    text.className = 'strength-text';
+                    
+                    if (strength <= 2) {
+                        fill.classList.add('weak');
+                        text.classList.add('weak');
+                        text.textContent = 'Faible';
+                    } else if (strength <= 3) {
+                        fill.classList.add('medium');
+                        text.classList.add('medium');
+                        text.textContent = 'Moyen';
+                    } else {
+                        fill.classList.add('strong');
+                        text.classList.add('strong');
+                        text.textContent = 'Fort';
+                    }
+                } else {
+                    strengthIndicator.classList.remove('show');
+                }
+            });
+        }
     </script>
 </body>
-
 </html>
